@@ -1,11 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
-<<<<<<< HEAD
 import { StyleSheet, Text, View } from 'react-native';
 import FormRequestOrganScreen from './frontend/screens/FormRequestOrganScreen';
-=======
-import { StyleSheet, Text } from 'react-native';
-import { View } from 'react-native';
->>>>>>> main
 
 import {NavigationContainer} from '@react-navigation/native';
 import {
@@ -36,19 +31,16 @@ export default function App() {
   });
   
   return (
-<<<<<<< HEAD
-    // <View style={styles.container}>
-    //   <Text>พี่เฟรมคนเท่ และพี่เปาคนหล่อ makmak</Text>
-    //   <StatusBar style="auto" />
-    // </View>
-    <FormRequestOrganScreen></FormRequestOrganScreen>
-=======
+    // // <View style={styles.container}>
+    // //   <Text>พี่เฟรมคนเท่ และพี่เปาคนหล่อ makmak</Text>
+    // //   <StatusBar style="auto" />
+    // // </View>
+    // <FormRequestOrganScreen></FormRequestOrganScreen>
     <View style={styles.container}>
       <Text style={styles.text}>พี่เฟรมคนเท่ และพี่เปาคนหล่อ makmak</Text>
       <Text style={styles.text2}> This is for test font</Text>
       <StatusBar style="auto" />
     </View>
->>>>>>> main
   );
 }
 
