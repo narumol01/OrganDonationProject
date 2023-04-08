@@ -35,12 +35,12 @@ export default function App() {
     // //   <Text>พี่เฟรมคนเท่ และพี่เปาคนหล่อ makmak</Text>
     // //   <StatusBar style="auto" />
     // // </View>
-    // <FormRequestOrganScreen></FormRequestOrganScreen>
-    <View style={styles.container}>
-      <Text style={styles.text}>พี่เฟรมคนเท่ และพี่เปาคนหล่อ makmak</Text>
-      <Text style={styles.text2}> This is for test font</Text>
-      <StatusBar style="auto" />
-    </View>
+    <FormRequestOrganScreen></FormRequestOrganScreen>
+    // <View style={styles.container}>
+    //   <Text style={styles.text}>พี่เฟรมคนเท่ และพี่เปาคนหล่อ makmak</Text>
+    //   <Text style={styles.text2}> This is for test font</Text>
+    //   <StatusBar style="auto" />
+    // </View>
   );
 }
 

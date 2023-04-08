@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { StyleSheet, View, Text, TextInput, Button, TouchableOpacity } from 'react-native';
+import Button_uploadData from '../components/Button_uploadData';
+import { useFonts, Kanit_700Bold } from '@expo-google-fonts/kanit';
 
 const FormRequestOrganScreen = () => {
   const [nameRequestor, setNameRequestor] = useState('');
@@ -24,13 +26,14 @@ const FormRequestOrganScreen = () => {
       </View>
       <View style={styles.row}>
         <Text style={styles.label}>เอกสาร:</Text>
-        <TextInput
+        {/* <TextInput
           style={styles.input}
           onChangeText={setDocRequestor}
           value={docRequestor}
           placeholder="เอกสาร"
         //   keyboardType="email-address"
-        />
+        /> */}
+        <Button_uploadData></Button_uploadData>
       </View>
       <View style={styles.row}>
         <Text style={[styles.label]}>ช่องทางการติดต่อ:</Text>
@@ -67,7 +70,7 @@ const styles = StyleSheet.create({
     marginRight: 10,
     textAlign: 'right',
     fontSize: 18,
-    fontFamily: 'Kanit-Black'
+    fontFamily: 'Kanit_700Bold'
   },
   input: {
     flex: 1,
@@ -78,8 +81,9 @@ const styles = StyleSheet.create({
     paddingHorizontal: 10,
     borderRadius: 15,
     padding: 8,
-    color: 'gray',
+    color: '#3c4242',
     backgroundColor: '#F3F3F3',
+    fontFamily: 'Kanit_700Bold',
   },
   button: {
     width: 500,
@@ -87,12 +91,13 @@ const styles = StyleSheet.create({
     backgroundColor: '#BAD7E9',
     borderRadius: 60,
     justifyContent: 'center',
-    marginTop: 30  
+    marginTop: 30
   },
   buttonText: {
     color: 'black',
     fontWeight: 'bold',
     textAlign: 'center',
+    fontFamily: 'Kanit_700Bold',
   },
 })
 export default FormRequestOrganScreen;
