@@ -1,7 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
-import FormRequestOrganScreen from './frontend/screens/FormRequestOrganScreen';
-import FormDonorScreen from './frontend/screens/FormDonorScreen';
+import MyOrganizeScreen from './frontend/screens/MyOrganizeScreen';
 
 import {NavigationContainer} from '@react-navigation/native';
 import {
@@ -25,6 +24,7 @@ import {
   Kanit_900Black,
   Kanit_900Black_Italic,
 } from '@expo-google-fonts/kanit';
+import ShowOrganizeScreen from './frontend/screens/ShowOrganizeScreen';
 export default function App() {
   let [fontsLoaded] = useFonts({
     Kanit_300Light,
@@ -38,7 +38,9 @@ export default function App() {
     // // </View>
 
     // <FormRequestOrganScreen></FormRequestOrganScreen>
-    <FormDonorScreen></FormDonorScreen>
+    // <FormDonorScreen></FormDonorScreen>
+    
+    <ShowOrganizeScreen></ShowOrganizeScreen>
 
     // <View style={styles.container}>
     //   <Text style={styles.text}>พี่เฟรมคนเท่ และพี่เปาคนหล่อ makmak</Text>
