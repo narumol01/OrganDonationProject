@@ -41,9 +41,9 @@ export default function App() {
 
     // <FormRequestOrganScreen></FormRequestOrganScreen>
     // <FormDonorScreen></FormDonorScreen>
-    // <ShowOrganizeScreen></ShowOrganizeScreen>
+    <ShowOrganizeScreen></ShowOrganizeScreen>
     // <ManageRequestOrganScreen></ManageRequestOrganScreen>
-    <ShowAllOrganizeScreen></ShowAllOrganizeScreen>
+    // <ShowAllOrganizeScreen></ShowAllOrganizeScreen>
 
     // <View style={styles.container}>
     //   <Text style={styles.text}>พี่เฟรมคนเท่ และพี่เปาคนหล่อ makmak</Text>
