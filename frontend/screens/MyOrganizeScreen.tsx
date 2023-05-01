@@ -4,6 +4,7 @@ import { useFonts, Kanit_400Regular } from '@expo-google-fonts/kanit';
 import CardDonorDetail from '../components/CardDonorDetail';
 import { MaterialIcons } from '@expo/vector-icons';
 
+
 import { useNavigation, useRoute } from '@react-navigation/native';
 import { MyOrganizeScreenNavigationProp } from '../navigation/types';
 import { MyOrganizeScreenRouteProp } from '../navigation/types';
@@ -14,18 +15,15 @@ const MyOrganizeScreen = () => {
     });
 
     // const [test, setTest] = useState('');
-    const route = useRoute<MyOrganizeScreenRouteProp>();
+    // const route = useRoute<MyOrganizeScreenRouteProp>();
     const navigation = useNavigation<MyOrganizeScreenNavigationProp>();
-    const handleSelectOrganType = () => {
-        navigation.navigate('SelectOrganType');
+    const handleAddDataDonor = () => {
+        console.log('ADD')
+        // navigation.navigate('FormDonor', );
     }
     return (
         <View style={styles.container}>
-            <View>
-            <TouchableOpacity onPress={handleSelectOrganType}>
-                    <Text>Login</Text>
-                </TouchableOpacity> 
-            </View>
+
             <View style={styles.row}>
                 <View style={[styles.column, { width: '60%' }]}>
                     <Text style={styles.text}>ชื่อหน่วยงาน : โรงพยาบาล ลาดกระบัง </Text>
@@ -34,7 +32,11 @@ const MyOrganizeScreen = () => {
                 <View style={[{ width: '40%' }]}>
                     <View style={styles.row}>
                         <View style={[{ width: '70%' }]}>
-                            <TouchableOpacity style={[styles.button]} >
+
+                            
+                            <TouchableOpacity style={[styles.button]} onPress={() => handleAddDataDonor()} >
+                            
+                            
                                 <Text style={styles.buttonText}>เพิ่มข้อมูลอวัยวะบริจาค</Text>
                             </TouchableOpacity>
                         </View>
@@ -46,7 +48,12 @@ const MyOrganizeScreen = () => {
             </View>
             <Text style={[styles.text, styles.rightAlign]}>ช่องทางติดต่อ : 08-6995-6364</Text>
             <View style={styles.line}></View>
-            <CardDonorDetail></CardDonorDetail>
+            <CardDonorDetail
+            bloodType='o' 
+            old='{12}' 
+            sex='ชาย' 
+            button_type='request'
+            id_donor='1'></CardDonorDetail>
         </View>
     );
 };

@@ -8,6 +8,7 @@ import { OrganDrawerNavigatorParamList} from './types';
 
 import MyOrganizeScreen from '../screens/MyOrganizeScreen';
 import SelectOrganTypeScreen from '../screens/SelectOrganType'
+import Logout from '../screens/LoginScreen'
 const OrganDrawer = createDrawerNavigator<OrganDrawerNavigatorParamList>();
 
 
@@ -16,6 +17,7 @@ const OrganDrawerNavigator = () => {
       <OrganDrawer.Navigator>
         <OrganDrawer.Screen name="MyOrganize" component={MyOrganizeScreen} />
         <OrganDrawer.Screen name="SelectOrganType" component={SelectOrganTypeScreen} />
+        <OrganDrawer.Screen name="Logout" component={Logout}  options={{headerShown:false}} />
       </OrganDrawer.Navigator>
     );
   };
