@@ -7,10 +7,14 @@ export type OrganStackNavigatorParamList = {
     ShowAllOrganize: {
       nameOrgan: string;
     }
-    MyOrganize:{
-     username: string; 
-    }
+    MyOrganize:undefined;
+    Drawer:undefined;
   };
+
+export type OrganDrawerNavigatorParamList = {
+  MyOrganize: undefined;
+  SelectOrganType: undefined;
+}
 
 
 export type LoginScreenNavigationProp = NativeStackNavigationProp<
@@ -29,10 +33,11 @@ export type SelectOrganTypeScreenNavigationProp = NativeStackNavigationProp<
   'SelectOrganType'
 >;
 
-// export type ShowAllOrganizeScreenNavigationProp = NativeStackNavigationProp<
-//   OrganStackNavigatorParamList,
-//   'ShowAllOrganize'
-// >;
+export type ShowAllOrganizeScreenNavigationProp = NativeStackNavigationProp<
+  OrganStackNavigatorParamList,
+  'ShowAllOrganize'
+>;
+
 
 // Route
 export type ShowAllOrganizeScreenRouteProp = RouteProp<

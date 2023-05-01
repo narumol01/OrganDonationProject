@@ -58,7 +58,7 @@ const LoginScreen = () => {
     const [password, setPassword] = useState('');
 
     const handleLogin = () => {
-        navigation.navigate('MyOrganize', {username: username})
+        navigation.navigate('MyOrganize')
         // navigation.navigate('SelectOrganType')
         console.log(username + " " + password)
     }

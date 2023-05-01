@@ -1,6 +1,6 @@
 npm i
 expo start
-
+npx expo start <-- recomment
 //web
 w
 
