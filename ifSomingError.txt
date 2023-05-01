@@ -1,0 +1,15 @@
+if it say look like
+
+error An unexpected error occurred: "C:\\Users\\USER\\AppData\\Local\\Yarn\\Cache\\v6\\npm-@types-node-18.15.7-integrity\\node_modules\\@types\\node\\.yarn-metadata.json: Unexpected token \u0000 in JSON at position 0".
+info Visit https://yarnpkg.com/en/docs/cli/add for documentation about this command
+
+go to your terminal
+
+yarn cache clean
+
+then
+
+yarn add @types/node
+
+
+p.s cancel your expo start before runing those code

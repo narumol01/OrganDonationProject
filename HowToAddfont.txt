@@ -1,0 +1,20 @@
+expo install @expo-google-fonts/{your google font name}
+
+import {
+  useFonts,
+  ...
+  ..
+} from '@expo-google-fonts/{your google font name}';
+
+
+in your export default function
+make
+let [fontsLoaded] = useFonts({
+    ...
+    ..
+    });
+
+
+now u can use your whataver font u need
+if u want to know more u can go to this ref link
+https://www.npmjs.com/package/@expo-google-fonts/kanit
