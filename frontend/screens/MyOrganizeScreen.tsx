@@ -4,17 +4,28 @@ import { useFonts, Kanit_400Regular } from '@expo-google-fonts/kanit';
 import CardDonorDetail from '../components/CardDonorDetail';
 import { MaterialIcons } from '@expo/vector-icons';
 
+import { useNavigation, useRoute } from '@react-navigation/native';
+import { MyOrganizeScreenNavigationProp } from '../navigation/types';
+import { MyOrganizeScreenRouteProp } from '../navigation/types';
+
 const MyOrganizeScreen = () => {
-    const [fontsLoaded] = useFonts({
+    let [fontsLoaded] = useFonts({
         Kanit_400Regular,
     });
 
-    if (!fontsLoaded) {
-        return null;
+    // const [test, setTest] = useState('');
+    const route = useRoute<MyOrganizeScreenRouteProp>();
+    const navigation = useNavigation<MyOrganizeScreenNavigationProp>();
+    const handleSelectOrganType = () => {
+        navigation.navigate('SelectOrganType');
     }
-
     return (
         <View style={styles.container}>
+            <View>
+            <TouchableOpacity onPress={handleSelectOrganType}>
+                    <Text>Login</Text>
+                </TouchableOpacity> 
+            </View>
             <View style={styles.row}>
                 <View style={[styles.column, { width: '60%' }]}>
                     <Text style={styles.text}>ชื่อหน่วยงาน : โรงพยาบาล ลาดกระบัง </Text>

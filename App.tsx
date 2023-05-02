@@ -1,10 +1,9 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
-import MyOrganizeScreen from './frontend/screens/MyOrganizeScreen';
-import ShowOrganizeScreen from './frontend/screens/ShowOrganizeScreen';
-import ManageRequestOrganScreen from './frontend/screens/ManageRequestOrganScreen';
-import ShowAllOrganizeScreen from './frontend/screens/ShowAllOrganizeScreen';
-import {NavigationContainer} from '@react-navigation/native';
+import { StyleSheet, Text } from 'react-native';
+import { View } from 'react-native';
+
+import RootNavigator from './frontend/navigation';
+
 import {
   useFonts,
   Kanit_100Thin,
@@ -27,29 +26,21 @@ import {
   Kanit_900Black_Italic,
 } from '@expo-google-fonts/kanit';
 
+
+// zone test 
+import LogingSreen from './frontend/screens/LoginScreen'
+
+
 export default function App() {
   let [fontsLoaded] = useFonts({
     Kanit_300Light,
     Kanit_700Bold,
   });
-  
   return (
-    // // <View style={styles.container}>
-    // //   <Text>พี่เฟรมคนเท่ และพี่เปาคนหล่อ makmak</Text>
-    // //   <StatusBar style="auto" />
-    // // </View>
-
-    // <FormRequestOrganScreen></FormRequestOrganScreen>
-    // <FormDonorScreen></FormDonorScreen>
-    <ShowOrganizeScreen></ShowOrganizeScreen>
-    // <ManageRequestOrganScreen></ManageRequestOrganScreen>
-    // <ShowAllOrganizeScreen></ShowAllOrganizeScreen>
-
-    // <View style={styles.container}>
-    //   <Text style={styles.text}>พี่เฟรมคนเท่ และพี่เปาคนหล่อ makmak</Text>
-    //   <Text style={styles.text2}> This is for test font</Text>
-    //   <StatusBar style="auto" />
-    // </View>
+    <>
+      <RootNavigator />
+      <StatusBar style="auto" />
+    </>
   );
 }
 
