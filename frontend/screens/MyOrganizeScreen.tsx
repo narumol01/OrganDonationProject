@@ -9,6 +9,14 @@ import { useNavigation, useRoute } from '@react-navigation/native';
 import { MyOrganizeScreenNavigationProp } from '../navigation/types';
 import { MyOrganizeScreenRouteProp } from '../navigation/types';
 
+interface MyOrganizeProp {
+    id_Organize: string,
+    nameOrganize: string,
+    placeOrganize: string,
+    phoneOrganize: string,
+    
+}
+
 const MyOrganizeScreen = () => {
     let [fontsLoaded] = useFonts({
         Kanit_400Regular,
@@ -19,7 +27,7 @@ const MyOrganizeScreen = () => {
     const navigation = useNavigation<MyOrganizeScreenNavigationProp>();
     const handleAddDataDonor = () => {
         console.log('ADD')
-        // navigation.navigate('FormDonor', );
+        navigation.navigate('FormDonor', {id_Organize: '1'});
     }
     return (
         <View style={styles.container}>

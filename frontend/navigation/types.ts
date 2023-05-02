@@ -5,7 +5,9 @@ export type OrganStackNavigatorParamList = {
     Login: undefined;
     MyOrganize:undefined;
     ManageRequestOrgan:undefined;
-    FormDonor:undefined;
+    FormDonor:{
+      id_Organize:string;
+    }
 
     SelectOrganType: undefined;
     ShowAllOrganize: {
