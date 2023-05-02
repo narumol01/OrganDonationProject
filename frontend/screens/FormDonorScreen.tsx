@@ -33,9 +33,7 @@ const FormDonorScreen = () => {
                 </View>
                 <View style={styles.row}>
                     <View style={styles.column2}>
-                        <BouncyCheckbox>
-                            <Text style={styles.label2}>หมู่เลือด</Text>
-                        </BouncyCheckbox>
+                        <Text style={styles.label2}>หมู่เลือด</Text>
                         <TextInput
                             style={styles.input2}
                             value={text1}
@@ -63,30 +61,38 @@ const FormDonorScreen = () => {
                     <Text style={[styles.label, { textAlign: 'left' }]}>ช่องทางการติดต่อ:</Text>
                 </View>
                 <View style={[styles.row]}>
-                    <View style={styles.column3}>
+                    <View style={[styles.row]}>
+                        <BouncyCheckbox></BouncyCheckbox>
                         <Text style={styles.label3}>ทั้งร่างกาย</Text>
                     </View>
                 </View>
                 <View style={[styles.row]}>
-                    <View style={styles.column3}>
+                    <View style={[styles.row, {marginRight: 12}]}>
+                        <BouncyCheckbox></BouncyCheckbox>
                         <Text style={styles.label3}>หัวใจ</Text>
                     </View>
-                    <View style={styles.column3}>
+                    <View style={[styles.row, {marginRight: 12}]}>
+                        <BouncyCheckbox></BouncyCheckbox>
                         <Text style={styles.label3}>ปอด</Text>
                     </View>
-                    <View style={styles.column3}>
+                    <View style={[styles.row, {marginRight: 12}]}>
+                        <BouncyCheckbox></BouncyCheckbox>
                         <Text style={styles.label3}>ไต</Text>
                     </View>
-                    <View style={styles.column3}>
+                    <View style={[styles.row, {marginRight: 12}]}>
+                        <BouncyCheckbox></BouncyCheckbox>
                         <Text style={styles.label3}>ตับ</Text>
                     </View>
-                    <View style={styles.column3}>
+                    <View style={[styles.row, {marginRight: 12}]}>
+                        <BouncyCheckbox></BouncyCheckbox>
                         <Text style={styles.label3}>ตับอ่อน</Text>
                     </View>
+
+
                 </View>
-                <TouchableOpacity style={styles.button} onPress={handleSubmit}>
-                    <Text style={styles.buttonText}>ยืนยันเพิ่มข้อมูลอวัยวะบริจาค</Text>
-                </TouchableOpacity>
+                    <TouchableOpacity style={styles.button} onPress={handleSubmit}>
+                        <Text style={styles.buttonText}>ยืนยันเพิ่มข้อมูลอวัยวะบริจาค</Text>
+                    </TouchableOpacity>
             </View>
         </View>
     );
@@ -107,7 +113,7 @@ const styles = StyleSheet.create({
     row: {
         flexDirection: 'row',
         alignItems: 'center',
-        marginBottom: 30,
+        marginBottom: 0,
     },
     label: {
         width: 200,
