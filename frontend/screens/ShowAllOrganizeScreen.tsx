@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native';
 
 import { useNavigation, useRoute } from '@react-navigation/native';
-import { ShowAllOrganizeScreenNavigationProp } from '../navigation/types';
+// import { ShowAllOrganizeScreenNavigationProp } from '../navigation/types';
 import { ShowAllOrganizeScreenRouteProp } from '../navigation/types'
 
 import {
@@ -52,7 +52,7 @@ const LoginScreen = () => {
     });
 
 
-    const navigation = useNavigation<ShowAllOrganizeScreenNavigationProp>();
+    // const navigation = useNavigation<ShowAllOrganizeScreenNavigationProp>();
     const route = useRoute<ShowAllOrganizeScreenRouteProp>();
     
 
