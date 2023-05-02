@@ -59,7 +59,7 @@ const MyOrganizeScreen = () => {
             bloodType='o' 
             old='12' 
             sex='ชาย' 
-            button_type='request'
+            button_type='confirm'
             id_donor='1'></CardDonorDetail>
         </View>
     );
