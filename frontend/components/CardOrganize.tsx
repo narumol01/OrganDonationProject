@@ -8,13 +8,12 @@ interface Props {
     id_organize: string;
     image_organ: string;
     organName: string;
-    button_type: 'request' | 'confirm';
 }
 
 import { useNavigation, useRoute } from '@react-navigation/native';
 
-import { ShowOrganizeNavigationProp } from '../navigation/types';
-import { ShowOrganizeScreenRouteProp } from '../navigation/types';
+import { ShowAllOrganizeScreenNavigationProp } from '../navigation/types';
+import { ShowAllOrganizeScreenRouteProp } from '../navigation/types';
 
 const CardOrganize = ({
     organizeName,
@@ -23,15 +22,20 @@ const CardOrganize = ({
     id_organize,
     image_organ,
     organName,
-    button_type }: Props) => {
+    }: Props) => {
 
     // const route = useRoute<Button_requestRouteProp>();
-    const navigation = useNavigation<ShowOrganizeNavigationProp>();
-    const route = useNavigation<ShowOrganizeNavigationProp>();
+    const navigation = useNavigation<ShowAllOrganizeScreenNavigationProp>();
+    const route = useNavigation<ShowAllOrganizeScreenRouteProp>();
 
     return (
         <View style={styles.card}>
-            <TouchableOpacity onPress={() => navigation.navigate('ShowOrganize')}>
+            <TouchableOpacity onPress={() => navigation.navigate('ShowOrganize',
+             {nameOrgan: organName,
+                id_Organize: id_organize,
+                name_Organize: organizeName,
+                place: place,
+                phone: phone})}>
                 <View style={[{ flexDirection: 'row' , display:'flex',}]}>
                     <View style={styles.imageContainer}>
                         <Image style={styles.image} source={require(`../components/${image_organ}.png`)} />
