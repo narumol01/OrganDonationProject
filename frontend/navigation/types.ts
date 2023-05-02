@@ -10,6 +10,7 @@ export type OrganStackNavigatorParamList = {
     SelectOrganType: undefined;
     ShowAllOrganize: {
       nameOrgan: string;
+      image_organ: string;
     }
     ShowOrganize:{
       nameOrgan: string;
@@ -69,12 +70,10 @@ ButtonNavigatorParamList,
   'FormRequestOrgan'
 >;
 
-// export type FormDonorScreenNavigationProp = NativeStackNavigationProp<
-//   OrganStackNavigatorParamList,
-//   'SelectOrganType'
-// >;
-
-
+export type ShowOrganizeNavigationProp = NativeStackNavigationProp<
+  OrganStackNavigatorParamList,
+  'SelectOrganType'
+>;
 
 export type SelectOrganTypeScreenNavigationProp = NativeStackNavigationProp<
   OrganStackNavigatorParamList,

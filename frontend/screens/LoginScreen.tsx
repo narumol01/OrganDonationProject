@@ -110,4 +110,4 @@ const styles = StyleSheet.create({
         alignSelf: 'center'
     }
 })
-export default LoginScreen
+export default LoginScreen;

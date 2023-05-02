@@ -9,20 +9,17 @@ const ManageRequestOrganScreen = () => {
         Kanit_400Regular,
     });
 
-    if (!fontsLoaded) {
-        return null;
-    }
 
     return (
         <View style={styles.container}>
             <View>
                 <Text style={styles.text}>คำร้องขอรับอวัยวะ</Text>
-                <CardDonorDetail></CardDonorDetail>
+                {/* <CardDonorDetail></CardDonorDetail> */}
             </View>
             <View style={styles.line}></View>
             <View>
                 <Text style={styles.text}>สถานะคำร้องขอรับอวัยวะ</Text>
-                <CardDonorDetail></CardDonorDetail>
+                {/* <CardDonorDetail></CardDonorDetail> */}
             </View>
         </View>
     );

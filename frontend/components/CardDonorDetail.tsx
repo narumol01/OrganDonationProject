@@ -23,7 +23,7 @@ const CardDonorDetail = ({ bloodType, old, sex, button_type, id_donor }: Props) 
     return (
         <View style={styles.card}>
             <View style={styles.imageContainer}>
-                <Image style={styles.image} source={require('../components/heart.png')} />
+                <Image style={styles.image} source={require('../components/heart_card.png')} />
             </View>
             <View style={styles.content}>
                 <Text style={styles.subtitle}>กรุ๊ปเลือด :  {bloodType}</Text>

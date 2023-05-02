@@ -54,7 +54,7 @@ const ShowAllOrganizeScreen = () => {
 
     const route = useRoute<ShowAllOrganizeScreenRouteProp>();
     if(route){
-         console.log(route.params.nameOrgan)
+         console.log(route.params.nameOrgan, route.params.image_organ)
     }else{
         console.log('fail to useRoute ')
     }
@@ -74,6 +74,7 @@ const ShowAllOrganizeScreen = () => {
                 place='75/3 Yothi Rd, Thung Phya Thai, Ratchathewi, Bangkok 10400'
                 phone='02 200 7777'
                 id_organize='1'
+                image_organ={route.params.image_organ}
                 organName='test'
                 ></CardOrganize>
             </View>
