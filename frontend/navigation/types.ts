@@ -4,7 +4,9 @@ import type { RouteProp } from '@react-navigation/native';
 export type OrganStackNavigatorParamList = {
     Login: undefined;
     MyOrganize:undefined;
-    ManageRequestOrgan:undefined;
+    ManageRequestOrgan:{
+      id_Organize:string;
+    };
     FormDonor:{
       id_Organize:string;
     }
@@ -24,6 +26,7 @@ export type OrganStackNavigatorParamList = {
     FormRequestOrgan:{
       id:string;
     };
+
   };
 
 export type ButtonNavigatorParamList = {
@@ -50,6 +53,9 @@ export type OrganDrawerNavigatorParamList = {
 
 //////////
 
+
+
+
 export type LoginScreenNavigationProp = NativeStackNavigationProp<
   OrganStackNavigatorParamList,
   'MyOrganize'
@@ -58,12 +64,12 @@ export type LoginScreenNavigationProp = NativeStackNavigationProp<
 
 export type MyOrganizeScreenNavigationProp = NativeStackNavigationProp<
   OrganStackNavigatorParamList,
-  'FormDonor'
+  'FormDonor',
+  'ManageRequestOrgan'
 >;
 
 export type ManageRequestOrganScreenNavigationProp = NativeStackNavigationProp<
-  OrganStackNavigatorParamList,
-  'SelectOrganType'
+  OrganStackNavigatorParamList
 >;
 
 
@@ -105,5 +111,8 @@ export type Button_requestRouteProp = RouteProp<
   ButtonNavigatorParamList,
   'FormRequestOrgan'
 >;
-
+export type ManageRequestOrganRouteProp = RouteProp<
+  OrganStackNavigatorParamList,
+  'ManageRequestOrgan'
+>;
 

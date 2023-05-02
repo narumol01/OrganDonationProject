@@ -14,6 +14,7 @@ import ShowOrganizeScreen from '../screens/ShowOrganizeScreen';
 // page not finish yet
 import FormDonorScreen from '../screens/FormDonorScreen';
 import FormRequestOrganScreen from '../screens/FormRequestOrganScreen'
+import ManageRequestOrganScreen from '../screens/ManageRequestOrganScreen';
 
 const OrganStack = createNativeStackNavigator<OrganStackNavigatorParamList>();
 
@@ -31,6 +32,7 @@ const OrganStackNavigator = () => {
       <OrganStack.Screen name='ShowOrganize'
         options={({ route }) => ({ title: route.params.name_Organize })}
         component={ShowOrganizeScreen} />
+        <OrganStack.Screen name="ManageRequestOrgan" component={ManageRequestOrganScreen} />
     </OrganStack.Navigator>
   );
 };

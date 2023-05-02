@@ -2,13 +2,12 @@ import React, { useState } from 'react';
 import { StyleSheet, View, Text, Image, TouchableOpacity, StatusBar } from 'react-native';
 
 interface Props {
-    bloodType: string;
-    old: string;
-    sex: string;
+    name: string;
+    phone: string;
+    nameOrganize: string;
+    id_organize: string;
     id_donor: string;
-    nameOrganize:string;
-    id_Organize:string;
-    statusApprove:string;
+    docRequest: string;
 }
 
 import Button_approveStatus from '../components/Button_approveStatus'
@@ -18,41 +17,42 @@ import { Button_requestRouteProp } from '../navigation/types';
 
 
 
-const CardStatusRequest = ({ bloodType, old, sex, id_donor, nameOrganize,id_Organize , statusApprove }: Props) => {
+const CardDocRequest = ({name,
+    phone,
+    nameOrganizename,
+    id_organizename,
+    id_donorname,
+    docRequestname}: Props) => {
 
-    const [color, setColor] = useState('#D8D8D8')
-    if(statusApprove == 'ผ่านการอนุมัติ'){
-        setColor('#45EBCD')
-    }else if(statusApprove == 'ไม่ผ่านการอนุมัติ'){
-        setColor('#EB455F')
-    }else{
-        setColor('#D8D8D8')
-    }
+    const [isHide, setIsHide] = useState(false)
     // const route = useRoute<Button_requestRouteProp>();
     // const navigation = useNavigation<Button_requestNavigationProp>();
     return (
-        <View>
+        <View style={{ display: isHide ? 'none' : 'flex' }}>
             <View style={styles.card2}>
-                <Text style={[{ color: 'white' }]}>โรงพยาบาล มหิดล</Text>
+                <Text style={[{ color: 'white' }]}>{nameOrganizename}</Text>
             </View>
             <View style={styles.card}>
                 <View style={styles.imageContainer}>
                     <Image style={styles.image} source={require('../components/heart_card.png')} />
                 </View>
                 <View style={styles.content}>
-                    <Text style={styles.subtitle}>กรุ๊ปเลือด :  {bloodType}</Text>
-                    <Text style={styles.subtitle}>อายุ : {old}</Text>
-                    <Text style={styles.subtitle}>เพศ : {sex}</Text>
+                    <Text style={styles.subtitle}>ชื่อผู้ยื่นคำร้อง :  {name}</Text>
+                    <Text style={styles.subtitle}>ช่องทางหารติดต่อ : {phone}</Text>
                 </View>
                 <View style={styles.buttonContainer}>
                     <View style={[{ paddingBottom: 10 }]}>
                         <TouchableOpacity style={[styles.buttonDoc]} >
-                            <Text style={styles.buttonText}>ข้อมูลผู้บริจาค</Text>
+                            <Text style={styles.buttonText}>เอกสารคำร้องขอรับอวัยวะ</Text>
                         </TouchableOpacity>
 
                         <View style={[styles.row]}>
-                            <TouchableOpacity style={[styles.buttonDoc2, { backgroundColor: color }]} >
+                            <TouchableOpacity onPress={() => setIsHide(true)} style={[styles.buttonDoc2, { backgroundColor: '#45EBCD' }]} >
                                 <Text style={styles.buttonText}>อนุมัติคำร้อง</Text>
+                            </TouchableOpacity>
+
+                            <TouchableOpacity onPress={() => setIsHide(true)} style={[styles.buttonDoc2, { backgroundColor: '#EB455F' }]} >
+                                <Text style={styles.buttonText}>ไม่อนุมัติคำร้อง</Text>
                             </TouchableOpacity>
                         </View>
 
@@ -162,4 +162,4 @@ const styles = StyleSheet.create({
     },
 });
 
-export default CardStatusRequest;
+export default CardDocRequest;

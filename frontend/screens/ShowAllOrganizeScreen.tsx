@@ -28,6 +28,7 @@ import {
 } from '@expo-google-fonts/kanit';
 
 import CardOrganize from '../components/CardOrganize';
+import { SearchBar } from 'react-native-screens';
 
 const ShowAllOrganizeScreen = () => {
     let [fontsLoaded] = useFonts({
@@ -53,31 +54,39 @@ const ShowAllOrganizeScreen = () => {
 
 
     const route = useRoute<ShowAllOrganizeScreenRouteProp>();
-    if(route){
-         console.log(route.params.nameOrgan, route.params.image_organ)
-    }else{
+    if (route) {
+        console.log(route.params.nameOrgan, route.params.image_organ)
+    } else {
         console.log('fail to useRoute ')
     }
-   
+    const [updateSearch, setUpdateSearch] = useState('');
     return (
         <ScrollView>
-        <View style={styles.container}>
-            <View>
+            <View style={styles.container}>
+                <View style={[styles.seachBar]}>
+                    <View style={styles.row2}>
+                        <TextInput
+                            style={styles.input}
+                            onChangeText={setUpdateSearch}
+                            value={updateSearch}
+                            placeholder="Type Here..."
+                            keyboardType="name-phone-pad"
+                        />
+                    </View>
+                </View>
+                <View>
+                    <CardOrganize
+                        organizeName='โรงพยาบาล A'
+                        place='75/3 Yothi Rd, Thung Phya Thai, Ratchathewi, Bangkok 10400'
+                        phone='02 200 7777'
+                        id_organize='1'
+                        image_organ={route.params.image_organ}
+                        organName='test'
+                    ></CardOrganize>
+
+                </View>
 
             </View>
-            <View>
-                <CardOrganize
-                organizeName='โรงพยาบาล A'
-                place='75/3 Yothi Rd, Thung Phya Thai, Ratchathewi, Bangkok 10400'
-                phone='02 200 7777'
-                id_organize='1'
-                image_organ={route.params.image_organ}
-                organName='test'
-                ></CardOrganize>
-                
-            </View>
-
-        </View>
         </ScrollView>
     )
 
@@ -89,15 +98,43 @@ const styles = StyleSheet.create({
         flex: 1,
         alignItems: 'center',
         justifyContent: 'center'
-        
+
     },
     row: {
         flexDirection: 'row'
     },
-    button_login:{
+    button_login: {
         backgroundColor: '#BAD7E9',
         padding: 10,
         alignSelf: 'center'
-    }
+    },
+    seachBar: {
+        padding: 5,
+        margin: 9
+    },
+    row2: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        marginBottom: 30,
+    },
+    // label: {
+    //     width: 100,
+    //     marginRight: 10,
+    //     fontSize: 18,
+    //     fontFamily: 'Kanit_700Bold'
+    // },
+    input: {
+        flex: 1,
+        width: 650,
+        height: 60,
+        borderColor: 'gray',
+        borderWidth: 1,
+        paddingHorizontal: 10,
+        borderRadius: 15,
+        padding: 8,
+        color: '#3c4242',
+        backgroundColor: '#F3F3F3',
+        fontFamily: 'Kanit_700Bold',
+    },
 })
 export default ShowAllOrganizeScreen;

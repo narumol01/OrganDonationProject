@@ -29,6 +29,10 @@ const MyOrganizeScreen = () => {
         console.log('ADD')
         navigation.navigate('FormDonor', {id_Organize: '1'});
     }
+    const handleNotifications = () => {
+        console.log('ADD')
+        navigation.navigate('ManageRequestOrgan', {id_Organize: '1'});
+    }
     return (
         <View style={styles.container}>
 
@@ -43,12 +47,13 @@ const MyOrganizeScreen = () => {
 
                             
                             <TouchableOpacity style={[styles.button]} onPress={() => handleAddDataDonor()} >
-                            
                                 <Text style={styles.buttonText}>เพิ่มข้อมูลอวัยวะบริจาค</Text>
                             </TouchableOpacity>
                         </View>
                         <View>
+                            <TouchableOpacity onPress={() => handleNotifications()}>
                             <MaterialIcons name="notifications" size={30} color="#2B3467" />
+                            </TouchableOpacity>
                         </View>
                     </View>
                 </View>
