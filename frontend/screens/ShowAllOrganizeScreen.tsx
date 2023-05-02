@@ -27,9 +27,9 @@ import {
     Kanit_900Black_Italic,
 } from '@expo-google-fonts/kanit';
 
+import CardOrganize from '../components/CardOrganize'
 
-
-const LoginScreen = () => {
+const ShowAllOrganizeScreen = () => {
     let [fontsLoaded] = useFonts({
         Kanit_100Thin,
         Kanit_100Thin_Italic,
@@ -52,7 +52,6 @@ const LoginScreen = () => {
     });
 
 
-    const navigation = useNavigation<ShowAllOrganizeScreenNavigationProp>();
     const route = useRoute<ShowAllOrganizeScreenRouteProp>();
     
 
@@ -64,14 +63,13 @@ const LoginScreen = () => {
     return (
         <View style={styles.container}>
             <View>
-                
-            <TouchableOpacity style={styles.button_login} onPress={() => handleDonor}>
-                    <Text>Donor</Text>
-            </TouchableOpacity> 
-
-            <TouchableOpacity style={styles.button_login} onPress={() => handle}>
-                    <Text>{route.params.nameOrgan}</Text>
-            </TouchableOpacity> 
+                <CardOrganize
+                organizeName='โรงพยาบาล มหิดล'
+                place='75/3 Yothi Rd, Thung Phya Thai, Ratchathewi, Bangkok 10400'
+                phone='02 200 7777'
+                id_organize='1'
+                organName={route.params.nameOrgan}
+                ></CardOrganize>
             </View>
 
         </View>
@@ -95,4 +93,4 @@ const styles = StyleSheet.create({
         alignSelf: 'center'
     }
 })
-export default LoginScreen
+export default ShowAllOrganizeScreen;

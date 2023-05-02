@@ -9,6 +9,7 @@ import SelectOrganTypeStackNavigator from './SelectOrganTypeStack';
 
 import LoginScreen from '../screens/LoginScreen';
 import ShowAllOrganizeScreen from '../screens/ShowAllOrganizeScreen'
+import ShowOrganizeScreen from '../screens/ShowOrganizeScreen';
 
 // page not finish yet
 import FormDonorScreen from '../screens/FormDonorScreen';
@@ -27,6 +28,9 @@ const OrganStackNavigator = () => {
       <OrganStack.Screen name='ShowAllOrganize'
       options={({route}) => ({title: route.params.nameOrgan})}
        component={ShowAllOrganizeScreen}/>
+       <OrganStack.Screen name='ShowOrganize'
+      options={({route}) => ({title: route.params.name_Organize})}
+       component={ShowOrganizeScreen}/>
     </OrganStack.Navigator>
   );
 };

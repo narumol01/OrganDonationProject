@@ -2,56 +2,43 @@ import React from 'react';
 import { StyleSheet, View, Text, Image, TouchableOpacity } from 'react-native';
 
 interface Props {
-    bloodType: string;
-    old: string;
-    sex: string;
-    button_type: 'request' | 'confirm';
-    id_donor: string;
+    organizeName: string;
+    place: string;
+    phone: string;
+    id_organize: string;
+    organName: string;
 }
 
 import { useNavigation, useRoute } from '@react-navigation/native';
-import { Button_requestNavigationProp } from '../navigation/types';
-import { Button_requestRouteProp } from '../navigation/types';
+import { ShowAllOrganizeScreenNavigationProp } from '../navigation/types';
 
 
+const navigation = useNavigation<ShowAllOrganizeScreenNavigationProp>();
 
-const CardDonorDetail = ({ bloodType, old, sex, button_type, id_donor }: Props) => {
-
-    // const route = useRoute<Button_requestRouteProp>();
-    const navigation = useNavigation<Button_requestNavigationProp>();
+const CardOrganize = ({ organizeName, place, phone, id_organize, organName }: Props) => {
 
     return (
-        <View style={styles.card}>
-            <View style={styles.imageContainer}>
-                <Image style={styles.image} source={require('../components/heart.png')} />
-            </View>
-            <View style={styles.content}>
-                <Text style={styles.subtitle}>กรุ๊ปเลือด :  {bloodType}</Text>
-                <Text style={styles.subtitle}>อายุ : {old}</Text>
-                <Text style={styles.subtitle}>เพศ : {sex}</Text>
-            </View>
-            <View style={styles.buttonContainer}>
-                <View style={[{ paddingBottom: 10 }]}>
-                    <TouchableOpacity style={[styles.buttonDoc]} >
-                        <Text style={styles.buttonText}>เอกสารข้อมูลผู้บริจาค</Text>
-                    </TouchableOpacity>
-                    <View>
-                        <TouchableOpacity
-                            style={[styles.buttonConfirm]}
-                            onPress={() =>
-                                button_type === 'request'
-                                    ? navigation.navigate('FormRequestOrgan', { id: id_donor })
-                                    : console.log('concon')
-                            }
-                        >
-                            <Text style={styles.buttonText}>
-                                {button_type === 'request' ? 'ขอรับอวัยวะ' : 'ยืนยันความพร้อม'}
-                            </Text>
-                        </TouchableOpacity>
+        <TouchableOpacity onPress={() => navigation.navigate('ShowOrganize', {
+            nameOrgan: organName, 
+            id_Organize:id_organize, 
+            name_Organize: organizeName,
+            place: place,
+            phone: phone} )}>
+            <View style={styles.card}>
+                <View style={styles.imageContainer}>
+                    <Image style={styles.image} source={require('../components/heart.png')} />
+                </View>
+                <View style={styles.content}>
+                    <Text style={styles.subtitle}>ชื่อหน่วยงาน :  {organizeName}</Text>
+                    <Text style={styles.subtitle}>สถานที่ : {place}</Text>
+                </View>
+                <View style={styles.buttonContainer}>
+                    <View style={[{ paddingBottom: 10 }]}>
+                        <Text>ช่องทางติดต่อ : {phone}</Text>
                     </View>
                 </View>
             </View>
-        </View>
+        </TouchableOpacity>
     );
 };
 
@@ -129,4 +116,4 @@ const styles = StyleSheet.create({
     },
 });
 
-export default CardDonorDetail;
+export default CardOrganize;

@@ -14,6 +14,9 @@ export type OrganStackNavigatorParamList = {
     ShowOrganize:{
       nameOrgan: string;
       id_Organize: string;
+      name_Organize: string;
+      place: string;
+      phone: string;
     }
     FormRequestOrgan:{
       id:string;
@@ -80,7 +83,7 @@ export type SelectOrganTypeScreenNavigationProp = NativeStackNavigationProp<
 
 export type ShowAllOrganizeScreenNavigationProp = NativeStackNavigationProp<
   OrganStackNavigatorParamList,
-  'ShowAllOrganize'
+  'ShowOrganize'
 >;
 
 

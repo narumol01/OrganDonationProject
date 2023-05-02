@@ -33,7 +33,7 @@ const FormRequestOrganScreen = () => {
           placeholder="เอกสาร"
         //   keyboardType="email-address"
         /> */}
-        <Button_uploadData></Button_uploadData>
+        {/* <Button_uploadData></Button_uploadData> */}
       </View>
       <View style={styles.row}>
         <Text style={[styles.label]}>ช่องทางการติดต่อ:</Text>
