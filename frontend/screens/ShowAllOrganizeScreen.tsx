@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native';
+import { StyleSheet, ScrollView, Text, TextInput, TouchableOpacity, View } from 'react-native';
 
 import { useNavigation, useRoute } from '@react-navigation/native';
 import { ShowAllOrganizeScreenNavigationProp } from '../navigation/types';
@@ -59,33 +59,33 @@ const ShowAllOrganizeScreen = () => {
         console.log('fail to useRoute ')
     }
    
-
-
-    // const handleDonor = () => {
-    // }
-    // const handle = () => {
-    // }
-
     return (
+        <ScrollView>
         <View style={styles.container}>
             <View>
+
+            </View>
+            <View>
                 <CardOrganize
-                organizeName='โรงพยาบาล มหิดล'
+                organizeName='โรงพยาบาล A'
                 place='75/3 Yothi Rd, Thung Phya Thai, Ratchathewi, Bangkok 10400'
                 phone='02 200 7777'
                 id_organize='1'
                 image_organ={route.params.image_organ}
                 organName='test'
                 ></CardOrganize>
+                
             </View>
 
         </View>
+        </ScrollView>
     )
 
 
 }
 const styles = StyleSheet.create({
     container: {
+        display: 'flex',
         flex: 1,
         alignItems: 'center',
         justifyContent: 'center'
