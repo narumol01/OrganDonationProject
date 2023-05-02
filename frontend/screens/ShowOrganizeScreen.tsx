@@ -4,7 +4,6 @@ import { useFonts, Kanit_400Regular } from '@expo-google-fonts/kanit';
 import CardDonorDetail from '../components/CardDonorDetail';
 import { MaterialIcons } from '@expo/vector-icons';
 
-
 import { useNavigation, useRoute } from '@react-navigation/native';
 // import { ShowOrganizeScreenNavigationProp } from '../navigation/types';
 import { ShowOrganizeScreenRouteProp } from '../navigation/types';
@@ -22,17 +21,17 @@ const ShowOrganizeScreen = () => {
 
             <View style={styles.row}>
                 <View style={[styles.column, { width: '60%' }]}>
-                    <Text style={styles.text}>ชื่อหน่วยงาน : โรงพยาบาล ลาดกระบัง </Text>
-                    <Text style={styles.text}>สถานที่ : ซอยลาดกระบัง 15 ถนนอ่อนนุช-ลาดกระบัง เขตลาดกระบัง กรุงเทพมหานคร 10520 </Text>
+                    <Text style={styles.text}>ชื่อหน่วยงาน : {route.params.name_Organize} </Text>
+                    <Text style={styles.text}>สถานที่ : {route.params.place} </Text>
                 </View>
                 <View style={[{ width: '40%' }]}>
                 </View>
             </View>
-            <Text style={[styles.text, styles.rightAlign]}>ช่องทางติดต่อ : 08-6995-6364</Text>
+            <Text style={[styles.text, styles.rightAlign]}>ช่องทางติดต่อ : {route.params.phone}</Text>
             <View style={styles.line}></View>
             <CardDonorDetail
             bloodType='o' 
-            old='{12}' 
+            old='12' 
             sex='ชาย' 
             button_type='request'
             id_donor='1'></CardDonorDetail>
