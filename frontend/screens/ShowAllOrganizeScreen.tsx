@@ -27,7 +27,7 @@ import {
     Kanit_900Black_Italic,
 } from '@expo-google-fonts/kanit';
 
-import CardOrganize from '../components/CardOrganize'
+import CardOrganize from '../components/CardOrganize';
 
 const ShowAllOrganizeScreen = () => {
     let [fontsLoaded] = useFonts({
@@ -53,12 +53,18 @@ const ShowAllOrganizeScreen = () => {
 
 
     const route = useRoute<ShowAllOrganizeScreenRouteProp>();
-    
+    if(route){
+         console.log(route.params.nameOrgan)
+    }else{
+        console.log('fail to useRoute ')
+    }
+   
 
-    const handleDonor = () => {
-    }
-    const handle = () => {
-    }
+
+    // const handleDonor = () => {
+    // }
+    // const handle = () => {
+    // }
 
     return (
         <View style={styles.container}>
@@ -68,7 +74,7 @@ const ShowAllOrganizeScreen = () => {
                 place='75/3 Yothi Rd, Thung Phya Thai, Ratchathewi, Bangkok 10400'
                 phone='02 200 7777'
                 id_organize='1'
-                organName={route.params.nameOrgan}
+                organName='test'
                 ></CardOrganize>
             </View>
 

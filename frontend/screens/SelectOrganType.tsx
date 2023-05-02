@@ -53,33 +53,39 @@ const LoginScreen = () => {
     const navigation = useNavigation<SelectOrganTypeScreenNavigationProp>();
 
     const handleSelectType = (type: string) => {
-        navigation.navigate('ShowAllOrganize', {nameOrgan: type})
+        navigation.navigate('ShowAllOrganize', { nameOrgan: type })
     }
 
     return (
         <View style={styles.container}>
-            <View>
-            <TouchableOpacity style={styles.button_login} onPress={() => handleSelectType('หัวใจ')}>
-                    <Text>หัวใจ</Text>
-            </TouchableOpacity> 
-            <TouchableOpacity style={styles.button_login} onPress={() => handleSelectType('ปอด')}>
-                    <Text>ปอด</Text>
-            </TouchableOpacity> 
-            <TouchableOpacity style={styles.button_login} onPress={() => handleSelectType('ไต')}>
-                    <Text>ไต</Text>
-            </TouchableOpacity> 
-            <TouchableOpacity style={styles.button_login} onPress={() => handleSelectType('ตับ')}>
-                    <Text>ตับ</Text>
-            </TouchableOpacity> 
-            <TouchableOpacity style={styles.button_login} onPress={() => handleSelectType('ตับอ่อน')}>
-                    <Text>ตับอ่อน</Text>
-            </TouchableOpacity> 
-                
+            <View >
+                <View style={styles.row}>
+                    <TouchableOpacity style={styles.button_login} onPress={() => handleSelectType('หัวใจ')}>
+                        <Text>หัวใจ</Text>
+                    </TouchableOpacity>
+                    <TouchableOpacity style={styles.button_login} onPress={() => handleSelectType('ปอด')}>
+                        <Text>ปอด</Text>
+                    </TouchableOpacity>
+                    <TouchableOpacity style={styles.button_login} onPress={() => handleSelectType('ไต')}>
+                        <Text>ไต</Text>
+                    </TouchableOpacity>
+                </View>
+                <View style={styles.row}>
+                    <TouchableOpacity style={styles.button_login} onPress={() => handleSelectType('ตับ')}>
+                        <Text>ตับ</Text>
+                    </TouchableOpacity>
+                    <TouchableOpacity style={styles.button_login} onPress={() => handleSelectType('ตับอ่อน')}>
+                        <Text>ตับอ่อน</Text>
+                    </TouchableOpacity>
+                    <TouchableOpacity style={styles.button_login} onPress={() => handleSelectType('ร่างกาย')}>
+                        <Text>ร่างกาย</Text>
+                    </TouchableOpacity>
+                </View>
+
             </View>
 
         </View>
     )
-
 
 }
 const styles = StyleSheet.create({
@@ -87,15 +93,21 @@ const styles = StyleSheet.create({
         flex: 1,
         alignItems: 'center',
         justifyContent: 'center'
-        
+
     },
     row: {
         flexDirection: 'row'
     },
-    button_login:{
+    button_login: {
+        borderRadius: 100,
+        width: 150,
+        height: 150,
         backgroundColor: '#BAD7E9',
-        padding: 10,
-        alignSelf: 'center'
+        padding: 35,
+        alignSelf: 'center',
+        alignItems: 'center',
+        justifyContent: 'center',
+        margin: 20
     }
 })
 export default LoginScreen

@@ -4,7 +4,6 @@ import { useFonts, Kanit_400Regular } from '@expo-google-fonts/kanit';
 import CardDonorDetail from '../components/CardDonorDetail';
 import { MaterialIcons } from '@expo/vector-icons';
 
-
 import { useNavigation, useRoute } from '@react-navigation/native';
 // import { ShowOrganizeScreenNavigationProp } from '../navigation/types';
 import { ShowOrganizeScreenRouteProp } from '../navigation/types';
@@ -32,7 +31,7 @@ const ShowOrganizeScreen = () => {
             <View style={styles.line}></View>
             <CardDonorDetail
             bloodType='o' 
-            old='{12}' 
+            old='12' 
             sex='ชาย' 
             button_type='request'
             id_donor='1'></CardDonorDetail>

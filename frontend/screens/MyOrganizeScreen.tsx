@@ -36,7 +36,6 @@ const MyOrganizeScreen = () => {
                             
                             <TouchableOpacity style={[styles.button]} onPress={() => handleAddDataDonor()} >
                             
-                            
                                 <Text style={styles.buttonText}>เพิ่มข้อมูลอวัยวะบริจาค</Text>
                             </TouchableOpacity>
                         </View>
@@ -50,7 +49,7 @@ const MyOrganizeScreen = () => {
             <View style={styles.line}></View>
             <CardDonorDetail
             bloodType='o' 
-            old='{12}' 
+            old='12' 
             sex='ชาย' 
             button_type='request'
             id_donor='1'></CardDonorDetail>

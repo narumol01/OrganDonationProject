@@ -20,17 +20,17 @@ const OrganStack = createNativeStackNavigator<OrganStackNavigatorParamList>();
 const OrganStackNavigator = () => {
   return (
     <OrganStack.Navigator >
-      <OrganStack.Screen name="Login" component={LoginScreen} options={{headerShown:false}} />
-      <OrganStack.Screen name="MyOrganize" component={MyOrganizeStackNavigator} options={{headerShown:false}}/>
-      <OrganStack.Screen name="FormDonor" component={FormDonorScreen}/>
-      <OrganStack.Screen name="FormRequestOrgan" component={FormRequestOrganScreen}/>
-      <OrganStack.Screen name="SelectOrganType" component={SelectOrganTypeStackNavigator} options={{headerShown:false}} />
+      <OrganStack.Screen name="Login" component={LoginScreen} options={{ headerShown: false }} />
+      <OrganStack.Screen name="MyOrganize" component={MyOrganizeStackNavigator} options={{ headerShown: false }} />
+      <OrganStack.Screen name="FormDonor" component={FormDonorScreen} />
+      <OrganStack.Screen name="FormRequestOrgan" component={FormRequestOrganScreen} />
+      <OrganStack.Screen name="SelectOrganType" component={SelectOrganTypeStackNavigator} options={{ headerShown: false }} />
       <OrganStack.Screen name='ShowAllOrganize'
-      options={({route}) => ({title: route.params.nameOrgan})}
-       component={ShowAllOrganizeScreen}/>
-       <OrganStack.Screen name='ShowOrganize'
-      options={({route}) => ({title: route.params.name_Organize})}
-       component={ShowOrganizeScreen}/>
+        options={({ route }) => ({ title: route.params.nameOrgan })}
+        component={ShowAllOrganizeScreen} />
+      <OrganStack.Screen name='ShowOrganize'
+        options={({ route }) => ({ title: route.params.name_Organize })}
+        component={ShowOrganizeScreen} />
     </OrganStack.Navigator>
   );
 };
