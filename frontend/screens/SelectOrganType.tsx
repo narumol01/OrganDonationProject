@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native';
+import { StyleSheet, ImageBackground, Text, TextInput, TouchableOpacity, View } from 'react-native';
 
 import { useNavigation, useRoute } from '@react-navigation/native';
 import { SelectOrganTypeScreenNavigationProp } from '../navigation/types';
@@ -26,7 +26,19 @@ import {
     Kanit_900Black_Italic,
 } from '@expo-google-fonts/kanit';
 
+const SelectTypeButton = (type: string, image_name: string) => {
+    const image = (uri: '../components/'+image_name+'.png' );
 
+    // return(
+    //     <ImageBackground source={image}>
+    //     <TouchableOpacity style={styles.button_login, { backgroundImage:}} onPress={() => handleSelectType('หัวใจ')}>
+    //         <Text>หัวใจ</Text>
+    //     </TouchableOpacity>
+    //     </ImageBackground>
+    // )
+    
+
+}
 
 const LoginScreen = () => {
     let [fontsLoaded] = useFonts({
